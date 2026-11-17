@@ -29,6 +29,8 @@ This excerpt from the November 17, 2026 run shows one discovery and one watchlis
 > - [`4228f4c`](https://github.com/astral-sh/ruff/commit/4228f4c2168d50dc60df1aec705a1438c75a4888) \[ty\] Update imports when renaming Python package folders (\#30084)
 > - File changes returned by GitHub — 57 modified.
 
+[![Watchlist screenshot from the November 17 digest showing 13 new Ruff commits, five linked commit titles, and 57 modified files](docs/images/watchlist-screenshot.jpg)](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-17/44160671138-1.md#watchlist)
+
 ## What you’ll find
 
 | Discover projects | Follow releases and commits |
