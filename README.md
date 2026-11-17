@@ -6,6 +6,27 @@ Find public GitHub projects that fit your interests and see what changed in the 
 
 **[Read the latest digest](https://github.com/OmElMon/Repo-Radar/blob/digests/README.md)** · **[Browse the archive](https://github.com/OmElMon/Repo-Radar/tree/digests/archive)**
 
+## Example digest
+
+This excerpt from the November 17, 2026 run shows one discovery and one watchlist update. [Read the full archived digest](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-17/44160671138-1.md)
+
+> **Discover** · [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan)
+>
+> See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
+>
+> - **Why it surfaced** — matches developer-tools, created within 30 days.
+> - **Community** — 4,719 stars · 387 forks.
+> - **Language and license** — JavaScript · MIT.
+> - **Activity** — created 2026-10-27 · last push 2026-11-16.
+> - **Momentum** — collecting a baseline for a later UTC-day comparison.
+> - **Explore** — [README](https://github.com/haydenschmitty/floorplan#readme) · [Releases](https://github.com/haydenschmitty/floorplan/releases) · [Contribution opportunities](https://github.com/haydenschmitty/floorplan/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+
+> **Watchlist** · [astral-sh/ruff](https://github.com/astral-sh/ruff)
+>
+> - [13 new commits](https://github.com/astral-sh/ruff/compare/8a6a9492d0bc897ebb455fc1ab6916fb34e7b55a...c17364ba1091c85152842f806dbddc1731a089ea) on **main**.
+> - [`4228f4c`](https://github.com/astral-sh/ruff/commit/4228f4c2168d50dc60df1aec705a1438c75a4888) \[ty\] Update imports when renaming Python package folders (\#30084)
+> - File changes returned by GitHub — 57 modified.
+
 ## What you’ll find
 
 | Discover projects | Follow releases and commits |
