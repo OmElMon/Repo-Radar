@@ -31,6 +31,12 @@ This excerpt from the November 17, 2026 run shows one discovery and one watchlis
 
 [![Watchlist screenshot from the November 17 digest showing 13 new Ruff commits, five linked commit titles, and 57 modified files](docs/images/watchlist-screenshot.jpg)](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-17/44160671138-1.md#watchlist)
 
+### Observed star growth
+
+Two archived runs on November 17 recorded **80 more stars for Floorplan** and **102 more for OpenIDEA**. The screenshot compares those recorded counts. In the daily digest, growth appears once an earlier UTC date is available for comparison. [See both source digests and the comparison](docs/examples/star-growth.md)
+
+[![Comparison of two November 17 digest runs showing Floorplan gaining 80 stars and OpenIDEA gaining 102 stars](docs/images/star-growth-screenshot.jpg)](docs/examples/star-growth.md)
+
 ### Release notes
 
 A separate digest run for Ruff shows how Repo Radar lists the version and publication date, then previews the maintainer’s notes under their original section headings. [Read the release digest excerpt](docs/examples/release-digest.md)
