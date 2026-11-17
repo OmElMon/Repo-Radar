@@ -1,0 +1,81 @@
+name: Daily digest
+
+on:
+  schedule:
+    - cron: "17 9 * * *"
+      timezone: America/New_York
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Generate and publish the digest
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          storage="$RUNNER_TEMP/repo-radar-digests"
+          report="$RUNNER_TEMP/repo-radar-digest.md"
+
+          # Use a separate worktree so the source checkout stays available.
+          if git ls-remote --exit-code origin refs/heads/digests >/dev/null; then
+            git fetch --no-tags origin refs/heads/digests
+            git worktree add --detach "$storage" FETCH_HEAD
+          else
+            status=$?
+            if [[ "$status" != 2 ]]; then
+              exit "$status"
+            fi
+            git worktree add --detach "$storage" HEAD
+            git -C "$storage" switch --orphan digests
+          fi
+
+          status=0
+          python repo_radar.py --profile .github/digest-profile.json \
+            --state "$storage/state.sqlite3" > "$report" || status=$?
+
+          if [[ ! -s "$report" ]]; then
+            echo "::error::Repo Radar produced no digest."
+            exit 1
+          fi
+
+          cat "$report" >> "$GITHUB_STEP_SUMMARY"
+
+          # Preserve the previous digest and state if the CLI failed before saving.
+          if [[ "$status" != 0 ]] && ! grep -qx '## Check warnings' "$report"; then
+            exit "$status"
+          fi
+
+          digest_date=$(sed -n '1s/^# Repo Radar · //p' "$report")
+          mkdir -p "$storage/archive/$digest_date"
+          cp "$report" "$storage/archive/$digest_date/$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.md"
+          {
+            printf '[Digest archive](archive/) · [Project README](%s/%s)\n\n' \
+              "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY"
+            cat "$report"
+          } > "$storage/README.md"
+
+          git -C "$storage" add -- README.md archive state.sqlite3
+          git -C "$storage" \
+            -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "Publish digest for $digest_date"
+          git -C "$storage" push origin HEAD:refs/heads/digests
+
+          # Publish partial results and mark the run as failed so warnings are visible.
+          exit "$status"

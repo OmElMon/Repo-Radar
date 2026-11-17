@@ -1,0 +1,4 @@
+{
+  "topics": ["python", "developer-tools"],
+  "watch": ["astral-sh/ruff", "BurntSushi/ripgrep"]
+}

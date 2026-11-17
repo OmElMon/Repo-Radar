@@ -1,38 +1,65 @@
 # Repo Radar
 
-Repo Radar finds public GitHub repositories that match your interests and tracks releases and code changes in the repositories you follow. It produces a Markdown digest with links to each repository, release, commit, and comparison.
+Find public GitHub projects that fit your interests and see what changed in the projects you already follow. Repo Radar turns both into a Markdown digest with links back to the source.
 
-## Quick start
+[![Daily digest](https://github.com/OmElMon/Repo-Radar/actions/workflows/daily-digest.yml/badge.svg)](https://github.com/OmElMon/Repo-Radar/actions/workflows/daily-digest.yml) · [MIT license](LICENSE) · Python 3.9+
 
-Use Python 3.9 or newer with an internet connection. The project uses the Python standard library and runs directly from this folder.
+**[Read the latest digest](https://github.com/OmElMon/Repo-Radar/blob/digests/README.md)** · **[Browse the archive](https://github.com/OmElMon/Repo-Radar/tree/digests/archive)**
+
+## What you’ll find
+
+| Discover projects | Follow releases and commits |
+| --- | --- |
+| Pick GitHub topics that matter to you. The digest shows matching projects with recent pushes, explains why they matched, and reports star growth once it has a baseline. | Add repositories you use. The digest links to new releases, highlights excerpts from their notes, and shows commits and added files on the default branch. |
+
+The discovery feed gives both emerging and established projects a spot when both are available. Rankings use topic matches, stars, forks, and star growth observed across runs.
+
+## Run it locally
+
+You’ll need **Python 3.9+**, Git, and an internet connection. Repo Radar uses the Python standard library.
 
 ```sh
+git clone https://github.com/OmElMon/Repo-Radar.git
+cd Repo-Radar
 cp profile.example.json profile.json
 python3 repo_radar.py --profile profile.json
 ```
 
-Edit `profile.json` to fit your work. Use GitHub topic slugs such as `python`, `accessibility`, or `self-hosted`, and specify repositories as `owner/name`. Either list can be empty. Save a digest with shell redirection.
+Edit `profile.json` to choose GitHub topics and repos. You can use either list on its own.
 
-```sh
-python3 repo_radar.py --profile profile.json --limit 5 > digest.md
+```json
+{
+  "topics": ["python", "developer-tools"],
+  "watch": ["astral-sh/ruff", "BurntSushi/ripgrep"]
+}
 ```
 
-The optional `GITHUB_TOKEN` environment variable authenticates requests when you need a higher rate limit. Keep credentials in the environment. The default SQLite database sits beside the profile as `profile.state.sqlite3`. Keep the same database between checks, or supply its path with `--state`. Use a separate database per profile.
+Save a report with `python3 repo_radar.py --profile profile.json > digest.md`. Use `--limit 5` to show up to five discoveries. Set the optional `GITHUB_TOKEN` environment variable if you need higher API limits.
 
-## What the digest shows
+The first run records a baseline and shows the latest fetched release and current commit for each watched repository. Use the same profile and keep its `profile.state.sqlite3` file between runs to track changes. Use `--state` to choose another location, and keep one database per profile.
 
-- **Discover.** GitHub Search finds recently pushed public repositories for each topic. Repo Radar ranks candidates by matching topics, stars, forks, and observed star growth. It alternates between emerging and established projects while both have results. The first run records a baseline. Positive growth can appear after a later UTC-day check. The ranking is specific to your profile and the sampled search results.
-- **Watchlist.** The first check shows the latest published release from the fetched results and the current default-branch commit. Later checks show newly seen published releases, including labeled prereleases, and compare the current branch head to the saved head. Each release includes up to three excerpts from its notes. Commit updates include a full comparison link, up to five commit titles, and up to five added file paths when GitHub includes them. A branch switch or rewritten history establishes a new commit baseline.
-- **Check warnings.** An API error or partial search is recorded in the digest and the command exits with status 1. Successful checks are saved and failed watchlist checks keep their previous baseline so they can be retried.
+## Get a daily digest on GitHub
 
-Discovery samples up to 30 results per query and uses two search requests per topic. Each watchlist check inspects the first 100 results from GitHub's Releases endpoint. Ordinary Git tags are outside that endpoint. Compare responses can include up to 300 changed files. [Repository search](https://docs.github.com/en/rest/search/search#search-repositories) · [Releases](https://docs.github.com/en/rest/releases/releases#list-releases) · [Commit comparisons](https://docs.github.com/en/rest/commits/commits#compare-two-commits)
+The [Daily digest workflow](.github/workflows/daily-digest.yml) runs at **9:17 a.m. Eastern**. Open the [latest digest](https://github.com/OmElMon/Repo-Radar/blob/digests/README.md), browse earlier reports by UTC date in the [archive](https://github.com/OmElMon/Repo-Radar/tree/digests/archive), or read a run’s summary from the [Actions tab](https://github.com/OmElMon/Repo-Radar/actions/workflows/daily-digest.yml).
 
-To run daily, add a cron entry with paths suited to your machine. This example saves one digest per day at 9 a.m. in the scheduler's local timezone. Create the digests directory before using the entry.
+To run a feed for your own interests:
 
-```cron
-0 9 * * * /path/to/python3 /path/to/repo-radar/repo_radar.py --profile /path/to/profile.json > /path/to/digests/$(date +\%F).md
-```
+1. Fork the repository and edit [the daily profile](.github/digest-profile.json) in your fork. Its topics and watchlist are public in a public fork.
+2. Enable Actions in your fork, open **Daily digest**, and select **Run workflow** to create the first report.
+3. Open the `digests` branch in your fork. Its README shows the latest report and its `archive/` folder holds earlier runs.
 
-## License
+The workflow saves its SQLite state on the `digests` branch so the next run can measure star growth and pick up where it left off. It uses GitHub’s built-in workflow token. GitHub can delay scheduled runs or pause schedules in public repositories after 60 days of inactivity. [GitHub Actions schedule documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 
-MIT. See [LICENSE](LICENSE).
+## How checks work
+
+- **Discovery** samples up to 30 results per GitHub Search query, using two queries per topic.
+- **Watchlist** checks the first 100 GitHub Releases results, including published prereleases, and compares saved and current default-branch commits. Reports show up to three release-note excerpts, five commit titles, and five added file paths, with a link to the full comparison.
+- **API warnings** appear in the report. The run returns a failure status when checks are incomplete, and failed watchlist checks keep their previous baseline for the next run.
+
+[Repository search API](https://docs.github.com/en/rest/search/search#search-repositories) · [Releases API](https://docs.github.com/en/rest/releases/releases#list-releases) · [Commit comparison API](https://docs.github.com/en/rest/commits/commits#compare-two-commits)
+
+## Contributing
+
+Open an [issue](https://github.com/OmElMon/Repo-Radar/issues) for a bug or feature idea, or send a pull request. For digest issues, include the command or Actions run, the relevant report excerpt, and what you expected to see. Leave credentials out of the example.
+
+Repo Radar is available under the [MIT license](LICENSE).
