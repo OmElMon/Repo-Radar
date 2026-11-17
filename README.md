@@ -9,7 +9,7 @@
 The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.
 
 - **Why it surfaced** — matches developer-tools, created within 30 days.
-- **Community** — 9,289 stars · 855 forks.
+- **Community** — 9,289 stars · 854 forks.
 - **Language and license** — TypeScript · Apache-2.0.
 - **Activity** — created 2026-10-21 · last push 2026-11-17.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -20,7 +20,7 @@ The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows an
 Reverse engineer anything with agents, from app behavior down to native binaries.
 
 - **Why it surfaced** — matches python.
-- **Community** — 466,004 stars · 114,034 forks.
+- **Community** — 466,173 stars · 114,076 forks.
 - **Language and license** — TypeScript · MIT.
 - **Activity** — created 2026-04-14 · last push 2026-11-17.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -31,7 +31,7 @@ Reverse engineer anything with agents, from app behavior down to native binaries
 See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
 
 - **Why it surfaced** — matches developer-tools, created within 30 days.
-- **Community** — 4,719 stars · 387 forks.
+- **Community** — 4,728 stars · 389 forks.
 - **Language and license** — JavaScript · MIT.
 - **Activity** — created 2026-10-27 · last push 2026-11-16.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -42,7 +42,7 @@ See how your app actually fits together. An interactive, plain-English map of yo
 An Open Source Machine Learning Framework for Everyone
 
 - **Why it surfaced** — matches python.
-- **Community** — 201,785 stars · 78,037 forks.
+- **Community** — 201,756 stars · 78,032 forks.
 - **Language and license** — C++ · Apache-2.0.
 - **Activity** — created 2015-11-07 · last push 2026-11-17.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -53,7 +53,7 @@ An Open Source Machine Learning Framework for Everyone
 This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through various web protection systems, login processes, and reverse-engineering scenarios
 
 - **Why it surfaced** — matches python, created within 30 days.
-- **Community** — 1,442 stars · 363 forks.
+- **Community** — 1,443 stars · 363 forks.
 - **Language and license** — C++ · AGPL-3.0.
 - **Activity** — created 2026-10-28 · last push 2026-11-17.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -64,7 +64,7 @@ This is a lightweight, headless browser purpose-built for AI agents (such as Cod
 All Algorithms implemented in Python
 
 - **Why it surfaced** — matches python.
-- **Community** — 226,198 stars · 51,340 forks.
+- **Community** — 226,203 stars · 51,338 forks.
 - **Language and license** — Python · MIT.
 - **Activity** — created 2016-07-16 · last push 2026-11-13.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -75,7 +75,7 @@ All Algorithms implemented in Python
 3D modeling in Python, built for LLMs.
 
 - **Why it surfaced** — matches python, created within 30 days.
-- **Community** — 2,110 stars · 232 forks.
+- **Community** — 2,112 stars · 232 forks.
 - **Language and license** — HTML · Apache-2.0.
 - **Activity** — created 2026-11-03 · last push 2026-11-17.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -86,7 +86,7 @@ All Algorithms implemented in Python
 The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
 
 - **Why it surfaced** — matches developer-tools.
-- **Community** — 305,312 stars · 44,957 forks.
+- **Community** — 305,426 stars · 44,976 forks.
 - **Language and license** — JavaScript · MIT.
 - **Activity** — created 2026-01-18 · last push 2026-11-17.
 - **Momentum** — collecting a baseline for a later UTC-day comparison.
@@ -97,13 +97,14 @@ The agent harness performance optimization system. Skills, instincts, memory, se
 
 ### [astral-sh/ruff](https://github.com/astral-sh/ruff)
 
-- [13 new commits](https://github.com/astral-sh/ruff/compare/8a6a9492d0bc897ebb455fc1ab6916fb34e7b55a...c17364ba1091c85152842f806dbddc1731a089ea) on **main**.
-- [`f87d465`](https://github.com/astral-sh/ruff/commit/f87d46534f46abee10a8f88689f79cf3494e44bd) \[ty\] Expose module locations for filesystem renames (\#30082)
-- [`a6d1e6c`](https://github.com/astral-sh/ruff/commit/a6d1e6c42167e64042744281fdbc8afd7e1fb0ce) \[ty\] Compute import edits for package directory renames (\#30083)
-- [`4228f4c`](https://github.com/astral-sh/ruff/commit/4228f4c2168d50dc60df1aec705a1438c75a4888) \[ty\] Update imports when renaming Python package folders (\#30084)
-- [`1d40d15`](https://github.com/astral-sh/ruff/commit/1d40d153a9ccfaded5a42b17528d30d4085828fa) \[ty\] Document runtime support in ty-extensions (\#30497)
-- [`6e18bb4`](https://github.com/astral-sh/ruff/commit/6e18bb4b0210875a15d88f85fd3b92d5759f167c) \[ty\] Sync bundled ty-extensions docstrings (\#30498)
-- File changes returned by GitHub — 57 modified.
+- [6 new commits](https://github.com/astral-sh/ruff/compare/c17364ba1091c85152842f806dbddc1731a089ea...45f24aea1242cb685014fefd1927eba517a26e7c) on **main**.
+- [`a5f0610`](https://github.com/astral-sh/ruff/commit/a5f06105865661d5c4156c6e60bbb047690e763f) \[ty\] Avoid exponential constraint search in generic constructor inference (\#30474)
+- [`28d934b`](https://github.com/astral-sh/ruff/commit/28d934bb5cfc5281ae02d6817c2cf4a773f34bc7) Update CI Node.js to 26.12.1 for the eMudhra fix (\#30506)
+- [`d598d62`](https://github.com/astral-sh/ruff/commit/d598d629f1cfe7bae174e5a3f9af61d72abfe2d4) \[ty\] Extend ty\_extensions module docstring (\#30507)
+- [`7be0f44`](https://github.com/astral-sh/ruff/commit/7be0f442ffe1716adf50b4650fd8deb67a88d25b) Trigger the VS Code extension release after stable Ruff releases (\#30413)
+- [`9e7e7a4`](https://github.com/astral-sh/ruff/commit/9e7e7a47f1b866340c432d535c41693d6beb4621) \[ty\] Sync the \`Intersection\` docstring with ty-extensions (\#30508)
+- File changes returned by GitHub — 2 added, 22 modified.
+- Added files: crates/ty\_python\_semantic/resources/lint\_docs/disjoint-type-is-narrowing.md, crates/ty\_python\_semantic/resources/lint\_docs/suspicious-type-is-narrowing.md.
 
 ### [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 
