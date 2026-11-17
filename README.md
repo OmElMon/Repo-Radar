@@ -14,6 +14,21 @@ Find public GitHub projects that fit your interests and see what changed in the 
 
 The discovery feed gives both emerging and established projects a spot when both are available. Rankings use topic matches, stars, forks, and star growth observed across runs.
 
+## How the daily digest is made
+
+```mermaid
+flowchart TB
+    accTitle: How Repo Radar publishes the daily digest
+    accDescr: GitHub Actions runs Repo Radar on a schedule or on demand. Repo Radar reads the profile and public GitHub data, compares it with saved state, and publishes a Markdown digest on the digests branch and in the Actions run summary.
+    trigger([Daily schedule or manual run]) --> radar("Repo Radar")
+    profile["Profile<br/>Topics and watchlist"] --> radar
+    github["GitHub API<br/>Search, releases, and commits"] --> radar
+    radar <-->|Read and save| state[("SQLite state<br/>Stars, releases, and commits")]
+    radar --> report["Markdown digest"]
+    report --> branch["Digests branch<br/>Latest report and archive"]
+    report --> summary["Actions run summary"]
+```
+
 ## Run it locally
 
 You’ll need **Python 3.9+**, Git, and an internet connection. Repo Radar uses the Python standard library.
