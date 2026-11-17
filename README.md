@@ -31,6 +31,12 @@ This excerpt from the November 17, 2026 run shows one discovery and one watchlis
 
 [![Watchlist screenshot from the November 17 digest showing 13 new Ruff commits, five linked commit titles, and 57 modified files](docs/images/watchlist-screenshot.jpg)](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-17/44160671138-1.md#watchlist)
 
+### Release notes
+
+A separate digest run for Ruff shows how Repo Radar lists the version and publication date, then previews the maintainer’s notes under their original section headings. [Read the release digest excerpt](docs/examples/release-digest.md)
+
+[![Repo Radar Watchlist screenshot showing Ruff 0.17.5, its November 12 release date, and five excerpts from the release notes](docs/images/release-screenshot.jpg)](docs/examples/release-digest.md)
+
 ## What you’ll find
 
 | Discover projects | Follow releases and commits |
