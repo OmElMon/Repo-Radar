@@ -10,6 +10,8 @@ Find public GitHub projects that fit your interests and see what changed in the 
 
 This excerpt from the November 17, 2026 run shows one discovery and one watchlist update. [Read the full archived digest](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-17/44160671138-1.md)
 
+[![Screenshot of the November 17 Repo Radar digest on GitHub, showing the first discovery with its match reason, community counts, license, and activity](docs/images/digest-screenshot.jpg)](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-17/44160671138-1.md)
+
 > **Discover** · [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan)
 >
 > See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
