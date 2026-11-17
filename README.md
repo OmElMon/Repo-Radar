@@ -14,6 +14,8 @@ Find public GitHub projects that fit your interests and see what changed in the 
 
 The discovery feed gives both emerging and established projects a spot when both are available. Rankings use topic matches, stars, forks, and star growth observed across runs.
 
+Each discovery includes the full repository description, the matching signals, language, license, creation date, last push, and links to its README, releases, and good first issues. Release excerpts keep section headings and multiline details so you can see the context behind an update.
+
 ## How the daily digest is made
 
 ```mermaid
@@ -68,7 +70,7 @@ The workflow saves its SQLite state on the `digests` branch so the next run can 
 ## How checks work
 
 - **Discovery** samples up to 30 results per GitHub Search query, using two queries per topic.
-- **Watchlist** checks the first 100 GitHub Releases results, including published prereleases, and compares saved and current default-branch commits. Reports show up to three release-note excerpts, five commit titles, and five added file paths, with a link to the full comparison.
+- **Watchlist** checks the first 100 GitHub Releases results, including published prereleases, and compares saved and current default-branch commits. Reports show up to five release-note excerpts of 600 characters each, five commit titles, a breakdown of returned file changes, and five added file paths, with a link to the full comparison.
 - **API warnings** appear in the report. The run returns a failure status when checks are incomplete, and failed watchlist checks keep their previous baseline for the next run.
 
 [Repository search API](https://docs.github.com/en/rest/search/search#search-repositories) · [Releases API](https://docs.github.com/en/rest/releases/releases#list-releases) · [Commit comparison API](https://docs.github.com/en/rest/commits/commits#compare-two-commits)
@@ -76,5 +78,7 @@ The workflow saves its SQLite state on the `digests` branch so the next run can 
 ## Contributing
 
 Open an [issue](https://github.com/OmElMon/Repo-Radar/issues) for a bug or feature idea, or send a pull request. For digest issues, include the command or Actions run, the relevant report excerpt, and what you expected to see. Leave credentials out of the example.
+
+Run the digest regression tests from the project root with `python3 -m unittest discover -s tests -v`. These cover metadata in discovery reports, repeated-run growth comparisons, and release-note formatting.
 
 Repo Radar is available under the [MIT license](LICENSE).

@@ -83,6 +83,16 @@ def repo_url(name):
     return "https://github.com/" + quote(name, safe="/")
 
 
+def plain_text(value):
+    """Keep readable text from release-note Markdown before escaping it."""
+    value = re.sub(r"!\[([^\]]*)\]\([^)]*\)", r"\1", value)
+    value = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", value)
+    value = re.sub(r"\\([\\`*_{}\[\]<>#|~!])", r"\1", value)
+    value = re.sub(r"\`+([^\`]+)\`+", r"\1", value)
+    value = re.sub(r"<[^>]+>", "", value)
+    return markdown(value)
+
+
 def digest_discovery(api, topics, watched, state, today, limit, warnings):
     candidates = {}
     fresh_since = today - timedelta(days=30)
@@ -141,13 +151,32 @@ def digest_discovery(api, topics, watched, state, today, limit, warnings):
         if growth is not None and growth > 0:
             reasons.append(f"+{growth:,} stars since {baseline['date']}")
         name = repo["full_name"]
-        description = markdown((repo.get("description") or "")[:200])
-        line = (
-            f"- [{markdown(name)}]({repo_url(name)}) ({stars:,} stars, {forks:,} forks) — "
-            f"{', '.join(reasons)}." + (f" {description}" if description else "")
-        )
+        url = repo_url(name)
+        description = markdown(repo.get("description") or "The repository has no description.")
+        license_name = (repo.get("license") or {}).get("spdx_id") or "Unspecified"
+        if license_name == "NOASSERTION":
+            license_name = "Review the repository license"
+        details = [
+            f"### [{markdown(name)}]({url})", "",
+            description, "",
+            f"- **Why it surfaced** — {', '.join(reasons)}.",
+            f"- **Community** — {stars:,} stars · {forks:,} forks.",
+            f"- **Language and license** — {markdown(repo.get('language') or 'Unspecified')} · "
+            f"{markdown(license_name)}.",
+            f"- **Activity** — created {(repo.get('created_at') or 'Unknown')[:10]} · "
+            f"last push {(repo.get('pushed_at') or 'Unknown')[:10]}.",
+        ]
+        if growth is None:
+            details.append("- **Momentum** — collecting a baseline for a later UTC-day comparison.")
+        elif growth <= 0:
+            details.append(f"- **Momentum** — {growth:+,} stars since {baseline['date']}.")
+        details.extend([
+            f"- **Explore** — [README]({url}#readme) · [Releases]({url}/releases) · "
+            f"[Contribution opportunities]({url}/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).",
+            "",
+        ])
         group = emerging_repos if entry["emerging"] else established_repos
-        group.append((-score, name.lower(), line))
+        group.append((-score, name.lower(), details))
 
     state["stars"] = snapshots
     emerging_repos.sort(reverse=True)
@@ -158,8 +187,8 @@ def digest_discovery(api, topics, watched, state, today, limit, warnings):
             (emerging_repos, established_repos) if len(lines) % 2 == 0
             else (established_repos, emerging_repos)
         )
-        _, _, line = (first or second).pop()
-        lines.append(line)
+        _, _, details = (first or second).pop()
+        lines.append("\n".join(details))
     return lines
 
 
@@ -171,17 +200,28 @@ def release_lines(release, url):
     published = release["published_at"][:10]
     lines = [f"- {label} [{markdown(title)}]({tag_url}) · {published}"]
     notes = []
+    section = ""
+    in_code = False
     for line in (release.get("body") or "").splitlines():
         stripped = line.strip()
-        if re.match(r"^[-*+]\s+|^\d+\.\s+", stripped):
-            notes.append(re.sub(r"^[-*+]\s+|^\d+\.\s+", "", stripped))
+        if stripped.startswith(("```", "~~~")):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        if stripped.startswith("#"):
+            section = stripped.lstrip("#").strip()
+        elif re.match(r"^[-*+]\s+|^\d+\.\s+", stripped):
+            notes.append([section, re.sub(r"^[-*+]\s+|^\d+\.\s+", "", stripped)])
+        elif stripped and line[:1].isspace() and notes:
+            notes[-1][1] += " " + stripped
+        elif stripped:
+            notes.append([section, stripped])
+    for section, note in notes[:5]:
+        prefix = f"**{plain_text(section)}** — " if section else ""
+        lines.append(f"  - {prefix}{plain_text(note[:600])}{'…' if len(note) > 600 else ''}")
     if not notes:
-        notes = [
-            line.strip() for line in (release.get("body") or "").splitlines()
-            if line.strip() and not line.lstrip().startswith(("#", "<", "```"))
-        ]
-    for note in notes[:3]:
-        lines.append(f"  - {markdown(note[:200])}{'…' if len(note) > 200 else ''}")
+        lines.append("  - Release notes were not provided.")
     return lines
 
 
@@ -241,7 +281,14 @@ def watch_repo(api, configured_name, previous):
                     f"- [{total:,} new {noun}]({url}/compare/{comparison}) on **{markdown(branch)}**."
                 )
                 lines.extend(commit_line(commit, url) for commit in diff["commits"])
-                added = [file["filename"] for file in diff.get("files", []) if file["status"] == "added"]
+                changed_files = diff.get("files", [])
+                if changed_files:
+                    counts = {}
+                    for file in changed_files:
+                        counts[file["status"]] = counts.get(file["status"], 0) + 1
+                    breakdown = ", ".join(f"{count} {status}" for status, count in sorted(counts.items()))
+                    lines.append(f"- File changes returned by GitHub — {breakdown}.")
+                added = [file["filename"] for file in changed_files if file["status"] == "added"]
                 if added:
                     files = ", ".join(markdown(filename) for filename in added[:5])
                     suffix = f", plus {len(added) - 5} more shown by GitHub" if len(added) > 5 else ""
@@ -291,6 +338,24 @@ def run(api, topics, watch, state, today, limit):
             lines.extend(updates + [""])
     if warnings:
         lines.extend(["## Check warnings", ""] + [f"- {markdown(w)}" for w in warnings])
+    lines.extend([
+        "", "## About this check", "",
+        f"Checked on {today} in UTC with {len(topics)} discovery topics and {len(watch)} watched repositories.",
+        "",
+        "Discovery samples up to 30 results per query from repositories pushed within 14 days. "
+        "Emerging projects were created within 30 days and have at least 5 stars. "
+        "The established-project search starts at 25 stars. Ranking uses topic matches, stars, "
+        "forks, recent creation, and observed star growth, then alternates between both groups.",
+        "",
+        "Descriptions and release-note excerpts come from project maintainers. "
+        "Topic matches describe relevance to the configured profile. "
+        "Stars and forks measure community activity. Evaluate the README, license, and issues "
+        "when deciding whether a project fits your work.",
+        "",
+        "Watchlist checks inspect up to 100 releases. Commit lists show up to five entries "
+        "in chronological order from the comparison. GitHub returns at most 300 changed files. "
+        "Follow the comparison link for further detail.",
+    ])
     return "\n".join(lines).rstrip() + "\n", warnings
 
 
