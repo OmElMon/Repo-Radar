@@ -1,0 +1,34 @@
+[Digest archive](archive/) · [Project README](https://github.com/OmElMon/Repo-Radar)
+
+# Repo Radar · 2026-11-17
+
+## Discover
+
+- [l0ng-ai/openidea](https://github.com/l0ng-ai/openidea) (9,187 stars, 844 forks) — matches developer-tools, created within 30 days. The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+
+- [morluto/rea](https://github.com/morluto/rea) (464,514 stars, 113,699 forks) — matches python. Reverse engineer anything with agents, from app behavior down to native binaries.
+- [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan) (4,639 stars, 381 forks) — matches developer-tools, created within 30 days. See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
+- [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) (201,608 stars, 77,968 forks) — matches python. An Open Source Machine Learning Framework for Everyone
+- [cutetailbud/ff-ruyijs](https://github.com/cutetailbud/ff-ruyijs) (1,425 stars, 360 forks) — matches python, created within 30 days. This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through various web protection system
+- [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) (226,183 stars, 51,337 forks) — matches python. All Algorithms implemented in Python
+- [Sandflow-ai/sand3d](https://github.com/Sandflow-ai/sand3d) (2,096 stars, 231 forks) — matches python, created within 30 days. 3D modeling in Python, built for LLMs.
+- [affaan-m/ECC](https://github.com/affaan-m/ECC) (304,747 stars, 44,879 forks) — matches developer-tools. The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
+
+## Watchlist
+
+### [astral-sh/ruff](https://github.com/astral-sh/ruff)
+
+- Release [0.17.5](https://github.com/astral-sh/ruff/releases/tag/0.17.5) · 2026-11-12
+  - Redirect renamed rules (\[\#30081\](https://github.com/astral-sh/ruff/pull/30081))
+  - \\\[\`flake8-async\`\\\] Implement \`pytest-raises-exception-group\` (\`ASYNC401\`) (\[\#28772\](https://github.com/astral-sh/ruff/pull/28772))
+  - \\\[\`flake8-logging-format\`\\\] Mark \`G004\` fix as unsafe (\[\#30087\](https://github.com/astral-sh/ruff/pull/30087))
+- Started tracking **main**.
+- [`8a6a949`](https://github.com/astral-sh/ruff/commit/8a6a9492d0bc897ebb455fc1ab6916fb34e7b55a) Upgrade Hawk to 0.1.18 on Rust 1.100 (\#30487)
+
+### [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+
+- Release [15.2.0](https://github.com/BurntSushi/ripgrep/releases/tag/15.2.0) · 2026-07-15
+  - \`aarch64-unknown-linux-musl\` is now included in the release binaries for
+  - \[PERF \#3293\](https://github.com/BurntSushi/ripgrep/issues/3293):
+  - \[FEATURE \#3275\](https://github.com/BurntSushi/ripgrep/issues/3275):
+- Started tracking **master**.
+- [`178cc02`](https://github.com/BurntSushi/ripgrep/commit/178cc027e283fd965cb72d0a7395b219eada170c) ignore: respect custom filters with a maximum file size (\#3599)
