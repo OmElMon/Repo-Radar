@@ -1,52 +1,68 @@
 [Digest archive](archive/) · [Project README](https://github.com/OmElMon/Repo-Radar)
 
-# Repo Radar · 2026-11-17
+# Repo Radar · 2026-11-18
 
 ## Discover
 
-### [l0ng-ai/openidea](https://github.com/l0ng-ai/openidea)
+### [erkamyaman/rust-anything](https://github.com/erkamyaman/rust-anything)
 
-The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.
+Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.
 
-- **Why it surfaced** — matches developer-tools, created within 30 days.
-- **Community** — 9,289 stars · 854 forks.
-- **Language and license** — TypeScript · Apache-2.0.
-- **Activity** — created 2026-10-21 · last push 2026-11-17.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
-- **Explore** — [README](https://github.com/l0ng-ai/openidea#readme) · [Releases](https://github.com/l0ng-ai/openidea/releases) · [Contribution opportunities](https://github.com/l0ng-ai/openidea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Why it surfaced** — matches python, created within 30 days, +118 stars since 2026-11-17.
+- **Community** — 1,243 stars · 79 forks.
+- **Language and license** — Rust · MIT.
+- **Activity** — created 2026-11-16 · last push 2026-11-17.
+- **Explore** — [README](https://github.com/erkamyaman/rust-anything#readme) · [Releases](https://github.com/erkamyaman/rust-anything/releases) · [Contribution opportunities](https://github.com/erkamyaman/rust-anything/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [morluto/rea](https://github.com/morluto/rea)
 
 Reverse engineer anything with agents, from app behavior down to native binaries.
 
-- **Why it surfaced** — matches python.
-- **Community** — 466,173 stars · 114,076 forks.
+- **Why it surfaced** — matches python, +99 stars since 2026-11-17.
+- **Community** — 466,272 stars · 114,092 forks.
 - **Language and license** — TypeScript · MIT.
-- **Activity** — created 2026-04-14 · last push 2026-11-17.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
+- **Activity** — created 2026-04-14 · last push 2026-11-18.
 - **Explore** — [README](https://github.com/morluto/rea#readme) · [Releases](https://github.com/morluto/rea/releases) · [Contribution opportunities](https://github.com/morluto/rea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+
+### [l0ng-ai/openidea](https://github.com/l0ng-ai/openidea)
+
+The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.
+
+- **Why it surfaced** — matches developer-tools, created within 30 days, +3 stars since 2026-11-17.
+- **Community** — 9,292 stars · 854 forks.
+- **Language and license** — TypeScript · Apache-2.0.
+- **Activity** — created 2026-10-21 · last push 2026-11-17.
+- **Explore** — [README](https://github.com/l0ng-ai/openidea#readme) · [Releases](https://github.com/l0ng-ai/openidea/releases) · [Contribution opportunities](https://github.com/l0ng-ai/openidea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+
+### [affaan-m/ECC](https://github.com/affaan-m/ECC)
+
+The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
+
+- **Why it surfaced** — matches developer-tools, +57 stars since 2026-11-17.
+- **Community** — 305,483 stars · 44,979 forks.
+- **Language and license** — JavaScript · MIT.
+- **Activity** — created 2026-01-18 · last push 2026-11-17.
+- **Explore** — [README](https://github.com/affaan-m/ECC#readme) · [Releases](https://github.com/affaan-m/ECC/releases) · [Contribution opportunities](https://github.com/affaan-m/ECC/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan)
 
 See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
 
-- **Why it surfaced** — matches developer-tools, created within 30 days.
-- **Community** — 4,728 stars · 389 forks.
+- **Why it surfaced** — matches developer-tools, created within 30 days, +5 stars since 2026-11-17.
+- **Community** — 4,733 stars · 389 forks.
 - **Language and license** — JavaScript · MIT.
 - **Activity** — created 2026-10-27 · last push 2026-11-16.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
 - **Explore** — [README](https://github.com/haydenschmitty/floorplan#readme) · [Releases](https://github.com/haydenschmitty/floorplan/releases) · [Contribution opportunities](https://github.com/haydenschmitty/floorplan/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
-### [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)
+### [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)
 
-An Open Source Machine Learning Framework for Everyone
+Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.
 
-- **Why it surfaced** — matches python.
-- **Community** — 201,756 stars · 78,032 forks.
-- **Language and license** — C++ · Apache-2.0.
-- **Activity** — created 2015-11-07 · last push 2026-11-17.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
-- **Explore** — [README](https://github.com/tensorflow/tensorflow#readme) · [Releases](https://github.com/tensorflow/tensorflow/releases) · [Contribution opportunities](https://github.com/tensorflow/tensorflow/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Why it surfaced** — matches developer-tools, +30 stars since 2026-11-17.
+- **Community** — 149,651 stars · 14,378 forks.
+- **Language and license** — Python · Apache-2.0.
+- **Activity** — created 2026-04-03 · last push 2026-11-17.
+- **Explore** — [README](https://github.com/Graphify-Labs/graphify#readme) · [Releases](https://github.com/Graphify-Labs/graphify/releases) · [Contribution opportunities](https://github.com/Graphify-Labs/graphify/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [cutetailbud/ff-ruyijs](https://github.com/cutetailbud/ff-ruyijs)
 
@@ -56,55 +72,25 @@ This is a lightweight, headless browser purpose-built for AI agents (such as Cod
 - **Community** — 1,443 stars · 363 forks.
 - **Language and license** — C++ · AGPL-3.0.
 - **Activity** — created 2026-10-28 · last push 2026-11-17.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
+- **Momentum** — +0 stars since 2026-11-17.
 - **Explore** — [README](https://github.com/cutetailbud/ff-ruyijs#readme) · [Releases](https://github.com/cutetailbud/ff-ruyijs/releases) · [Contribution opportunities](https://github.com/cutetailbud/ff-ruyijs/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
-### [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python)
+### [vinta/awesome-python](https://github.com/vinta/awesome-python)
 
-All Algorithms implemented in Python
+The definitive list that answers "I want to do X in Python, which tool should I use?"
 
-- **Why it surfaced** — matches python.
-- **Community** — 226,203 stars · 51,338 forks.
-- **Language and license** — Python · MIT.
-- **Activity** — created 2016-07-16 · last push 2026-11-13.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
-- **Explore** — [README](https://github.com/TheAlgorithms/Python#readme) · [Releases](https://github.com/TheAlgorithms/Python/releases) · [Contribution opportunities](https://github.com/TheAlgorithms/Python/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
-
-### [Sandflow-ai/sand3d](https://github.com/Sandflow-ai/sand3d)
-
-3D modeling in Python, built for LLMs.
-
-- **Why it surfaced** — matches python, created within 30 days.
-- **Community** — 2,112 stars · 232 forks.
-- **Language and license** — HTML · Apache-2.0.
-- **Activity** — created 2026-11-03 · last push 2026-11-17.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
-- **Explore** — [README](https://github.com/Sandflow-ai/sand3d#readme) · [Releases](https://github.com/Sandflow-ai/sand3d/releases) · [Contribution opportunities](https://github.com/Sandflow-ai/sand3d/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
-
-### [affaan-m/ECC](https://github.com/affaan-m/ECC)
-
-The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
-
-- **Why it surfaced** — matches developer-tools.
-- **Community** — 305,426 stars · 44,976 forks.
-- **Language and license** — JavaScript · MIT.
-- **Activity** — created 2026-01-18 · last push 2026-11-17.
-- **Momentum** — collecting a baseline for a later UTC-day comparison.
-- **Explore** — [README](https://github.com/affaan-m/ECC#readme) · [Releases](https://github.com/affaan-m/ECC/releases) · [Contribution opportunities](https://github.com/affaan-m/ECC/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Why it surfaced** — matches python, +13 stars since 2026-11-17.
+- **Community** — 335,486 stars · 29,122 forks.
+- **Language and license** — Python · Review the repository license.
+- **Activity** — created 2014-06-27 · last push 2026-11-17.
+- **Explore** — [README](https://github.com/vinta/awesome-python#readme) · [Releases](https://github.com/vinta/awesome-python/releases) · [Contribution opportunities](https://github.com/vinta/awesome-python/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 
 ## Watchlist
 
 ### [astral-sh/ruff](https://github.com/astral-sh/ruff)
 
-- [6 new commits](https://github.com/astral-sh/ruff/compare/c17364ba1091c85152842f806dbddc1731a089ea...45f24aea1242cb685014fefd1927eba517a26e7c) on **main**.
-- [`a5f0610`](https://github.com/astral-sh/ruff/commit/a5f06105865661d5c4156c6e60bbb047690e763f) \[ty\] Avoid exponential constraint search in generic constructor inference (\#30474)
-- [`28d934b`](https://github.com/astral-sh/ruff/commit/28d934bb5cfc5281ae02d6817c2cf4a773f34bc7) Update CI Node.js to 26.12.1 for the eMudhra fix (\#30506)
-- [`d598d62`](https://github.com/astral-sh/ruff/commit/d598d629f1cfe7bae174e5a3f9af61d72abfe2d4) \[ty\] Extend ty\_extensions module docstring (\#30507)
-- [`7be0f44`](https://github.com/astral-sh/ruff/commit/7be0f442ffe1716adf50b4650fd8deb67a88d25b) Trigger the VS Code extension release after stable Ruff releases (\#30413)
-- [`9e7e7a4`](https://github.com/astral-sh/ruff/commit/9e7e7a47f1b866340c432d535c41693d6beb4621) \[ty\] Sync the \`Intersection\` docstring with ty-extensions (\#30508)
-- File changes returned by GitHub — 2 added, 22 modified.
-- Added files: crates/ty\_python\_semantic/resources/lint\_docs/disjoint-type-is-narrowing.md, crates/ty\_python\_semantic/resources/lint\_docs/suspicious-type-is-narrowing.md.
+- No new releases or default-branch commits.
 
 ### [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 
@@ -113,7 +99,7 @@ The agent harness performance optimization system. Skills, instincts, memory, se
 
 ## About this check
 
-Checked on 2026-11-17 in UTC with 2 discovery topics and 2 watched repositories.
+Checked on 2026-11-18 in UTC with 2 discovery topics and 2 watched repositories.
 
 Discovery samples up to 30 results per query from repositories pushed within 14 days. Emerging projects were created within 30 days and have at least 5 stars. The established-project search starts at 25 stars. Ranking uses topic matches, stars, forks, recent creation, and observed star growth, then alternates between both groups.
 
