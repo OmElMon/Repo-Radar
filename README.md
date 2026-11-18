@@ -33,9 +33,9 @@ This excerpt from the November 17, 2026 run shows one discovery and one watchlis
 
 ### Observed star growth
 
-Two archived runs on November 17 recorded **80 more stars for Floorplan** and **102 more for OpenIDEA**. The screenshot compares those recorded counts. In the daily digest, growth appears once an earlier UTC date is available for comparison. [See both source digests and the comparison](docs/examples/star-growth.md)
+In the November 18 UTC digest, Floorplan shows **+5 stars since November 17** in its **Why it surfaced** line. [Read the archived digest entry](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-18/44204251100-1.md#haydenschmittyfloorplan)
 
-[![Comparison of two November 17 digest runs showing Floorplan gaining 80 stars and OpenIDEA gaining 102 stars](docs/images/star-growth-screenshot.jpg)](docs/examples/star-growth.md)
+[![Floorplan discovery in the November 18 daily digest showing five more stars since November 17](docs/images/star-growth-screenshot.jpg)](https://github.com/OmElMon/Repo-Radar/blob/digests/archive/2026-11-18/44204251100-1.md#haydenschmittyfloorplan)
 
 ### Release notes
 
