@@ -8,18 +8,18 @@
 
 Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.
 
-- **Why it surfaced** — matches python, created within 30 days, +118 stars since 2026-11-17.
-- **Community** — 1,243 stars · 79 forks.
+- **Why it surfaced** — matches python, created within 30 days, +2,101 stars since 2026-11-17.
+- **Community** — 3,226 stars · 254 forks.
 - **Language and license** — Rust · MIT.
-- **Activity** — created 2026-11-16 · last push 2026-11-17.
+- **Activity** — created 2026-11-16 · last push 2026-11-18.
 - **Explore** — [README](https://github.com/erkamyaman/rust-anything#readme) · [Releases](https://github.com/erkamyaman/rust-anything/releases) · [Contribution opportunities](https://github.com/erkamyaman/rust-anything/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [morluto/rea](https://github.com/morluto/rea)
 
 Reverse engineer anything with agents, from app behavior down to native binaries.
 
-- **Why it surfaced** — matches python, +99 stars since 2026-11-17.
-- **Community** — 466,272 stars · 114,092 forks.
+- **Why it surfaced** — matches python, +1,993 stars since 2026-11-17.
+- **Community** — 468,166 stars · 114,440 forks.
 - **Language and license** — TypeScript · MIT.
 - **Activity** — created 2026-04-14 · last push 2026-11-18.
 - **Explore** — [README](https://github.com/morluto/rea#readme) · [Releases](https://github.com/morluto/rea/releases) · [Contribution opportunities](https://github.com/morluto/rea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
@@ -28,18 +28,18 @@ Reverse engineer anything with agents, from app behavior down to native binaries
 
 The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.
 
-- **Why it surfaced** — matches developer-tools, created within 30 days, +3 stars since 2026-11-17.
-- **Community** — 9,292 stars · 854 forks.
+- **Why it surfaced** — matches developer-tools, created within 30 days, +93 stars since 2026-11-17.
+- **Community** — 9,382 stars · 873 forks.
 - **Language and license** — TypeScript · Apache-2.0.
-- **Activity** — created 2026-10-21 · last push 2026-11-17.
+- **Activity** — created 2026-10-21 · last push 2026-11-18.
 - **Explore** — [README](https://github.com/l0ng-ai/openidea#readme) · [Releases](https://github.com/l0ng-ai/openidea/releases) · [Contribution opportunities](https://github.com/l0ng-ai/openidea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [affaan-m/ECC](https://github.com/affaan-m/ECC)
 
 The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
 
-- **Why it surfaced** — matches developer-tools, +57 stars since 2026-11-17.
-- **Community** — 305,483 stars · 44,979 forks.
+- **Why it surfaced** — matches developer-tools, +1,008 stars since 2026-11-17.
+- **Community** — 306,434 stars · 45,113 forks.
 - **Language and license** — JavaScript · MIT.
 - **Activity** — created 2026-01-18 · last push 2026-11-17.
 - **Explore** — [README](https://github.com/affaan-m/ECC#readme) · [Releases](https://github.com/affaan-m/ECC/releases) · [Contribution opportunities](https://github.com/affaan-m/ECC/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
@@ -48,8 +48,8 @@ The agent harness performance optimization system. Skills, instincts, memory, se
 
 See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
 
-- **Why it surfaced** — matches developer-tools, created within 30 days, +5 stars since 2026-11-17.
-- **Community** — 4,733 stars · 389 forks.
+- **Why it surfaced** — matches developer-tools, created within 30 days, +95 stars since 2026-11-17.
+- **Community** — 4,823 stars · 400 forks.
 - **Language and license** — JavaScript · MIT.
 - **Activity** — created 2026-10-27 · last push 2026-11-16.
 - **Explore** — [README](https://github.com/haydenschmitty/floorplan#readme) · [Releases](https://github.com/haydenschmitty/floorplan/releases) · [Contribution opportunities](https://github.com/haydenschmitty/floorplan/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
@@ -58,8 +58,8 @@ See how your app actually fits together. An interactive, plain-English map of yo
 
 Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.
 
-- **Why it surfaced** — matches developer-tools, +30 stars since 2026-11-17.
-- **Community** — 149,651 stars · 14,378 forks.
+- **Why it surfaced** — matches developer-tools, +515 stars since 2026-11-17.
+- **Community** — 150,136 stars · 14,425 forks.
 - **Language and license** — Python · Apache-2.0.
 - **Activity** — created 2026-04-03 · last push 2026-11-17.
 - **Explore** — [README](https://github.com/Graphify-Labs/graphify#readme) · [Releases](https://github.com/Graphify-Labs/graphify/releases) · [Contribution opportunities](https://github.com/Graphify-Labs/graphify/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
@@ -68,19 +68,18 @@ Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryab
 
 This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through various web protection systems, login processes, and reverse-engineering scenarios
 
-- **Why it surfaced** — matches python, created within 30 days.
-- **Community** — 1,443 stars · 363 forks.
+- **Why it surfaced** — matches python, created within 30 days, +84 stars since 2026-11-17.
+- **Community** — 1,527 stars · 362 forks.
 - **Language and license** — C++ · AGPL-3.0.
 - **Activity** — created 2026-10-28 · last push 2026-11-17.
-- **Momentum** — +0 stars since 2026-11-17.
 - **Explore** — [README](https://github.com/cutetailbud/ff-ruyijs#readme) · [Releases](https://github.com/cutetailbud/ff-ruyijs/releases) · [Contribution opportunities](https://github.com/cutetailbud/ff-ruyijs/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [vinta/awesome-python](https://github.com/vinta/awesome-python)
 
 The definitive list that answers "I want to do X in Python, which tool should I use?"
 
-- **Why it surfaced** — matches python, +13 stars since 2026-11-17.
-- **Community** — 335,486 stars · 29,122 forks.
+- **Why it surfaced** — matches python, +216 stars since 2026-11-17.
+- **Community** — 335,689 stars · 29,127 forks.
 - **Language and license** — Python · Review the repository license.
 - **Activity** — created 2014-06-27 · last push 2026-11-17.
 - **Explore** — [README](https://github.com/vinta/awesome-python#readme) · [Releases](https://github.com/vinta/awesome-python/releases) · [Contribution opportunities](https://github.com/vinta/awesome-python/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
@@ -90,11 +89,21 @@ The definitive list that answers "I want to do X in Python, which tool should I 
 
 ### [astral-sh/ruff](https://github.com/astral-sh/ruff)
 
-- No new releases or default-branch commits.
+- [32 new commits](https://github.com/astral-sh/ruff/compare/45f24aea1242cb685014fefd1927eba517a26e7c...248231e9936ecc0e44ecd3a69bc07899736e4e23) on **main**.
+- [`d84471e`](https://github.com/astral-sh/ruff/commit/d84471e739f9c5de11cab5022a8cb9b3ea11cccd) \[ty\] Preserve compatible overloads when partially binding a union argument (\#30446)
+- [`ebe96a3`](https://github.com/astral-sh/ruff/commit/ebe96a3c95e9ddc03445697669036852c806b717) Update prek dependencies (\#30511)
+- [`f4f75dd`](https://github.com/astral-sh/ruff/commit/f4f75dd70e8cd1d53494859ed8b90197285fd4b6) \[ty\] Handle TypedDict union pairs before other simplifications (\#30516)
+- [`a397d0d`](https://github.com/astral-sh/ruff/commit/a397d0d085e923e7d94174826e4576f216c215fc) Update uv to v0.13.9 (\#30518)
+- [`2f35abd`](https://github.com/astral-sh/ruff/commit/2f35abda0210914d384d329f8c7054a34320ee5c) Update dependency oxlint to v1.88.0 (\#30519)
+- File changes returned by GitHub — 10 added, 112 modified, 3 removed.
+- Added files: crates/ruff\_linter/resources/mdtest/pyflakes/undefined-local.md, crates/ruff\_linter/resources/test/fixtures/flake8\_type\_checking/TC010\_3.py, crates/ruff\_linter/src/rules/flake8\_type\_checking/snapshots/ruff\_linter\_\_rules\_\_flake8\_type\_checking\_\_tests\_\_runtime-string-union\_3.13\_TC010\_1.py.snap, crates/ruff\_linter/src/rules/flake8\_type\_checking/snapshots/ruff\_linter\_\_rules\_\_flake8\_type\_checking\_\_tests\_\_runtime-string-union\_3.13\_TC010\_2.py.snap, crates/ruff\_linter/src/rules/flake8\_type\_checking/snapshots/ruff\_linter\_\_rules\_\_flake8\_type\_checking\_\_tests\_\_runtime-string-union\_3.13\_TC010\_3.py.snap, plus 5 more shown by GitHub.
 
 ### [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 
-- No new releases or default-branch commits.
+- [1 new commit](https://github.com/BurntSushi/ripgrep/compare/178cc027e283fd965cb72d0a7395b219eada170c...4933645d81498e53ea150f96bde5860f6dcb2e5f) on **master**.
+- [`4933645`](https://github.com/BurntSushi/ripgrep/commit/4933645d81498e53ea150f96bde5860f6dcb2e5f) chore: add trusted publishing
+- File changes returned by GitHub — 1 added, 2 modified.
+- Added files: .github/workflows/publish.yml.
 
 
 ## About this check
