@@ -92,6 +92,51 @@ Save a report with `python3 repo_radar.py --profile profile.json > digest.md`. U
 
 The first run records a baseline and shows the latest fetched release and current commit for each watched repository. Use the same profile and keep its `profile.state.sqlite3` file between runs to track changes. Use `--state` to choose another location, and keep one database per profile.
 
+## Watch your Python project's dependencies
+
+The dependency importer requires **Python 3.11+**. Given a `pyproject.toml` like this:
+
+```toml
+[project]
+name = "example-app"
+version = "0.1.0"
+dependencies = ["httpx>=0.27"]
+
+[project.optional-dependencies]
+lint = ["ruff>=0.9"]
+```
+
+Preview the watchlist, including the optional `lint` extra:
+
+```sh
+python3 repo_radar.py import-deps ./pyproject.toml --extra lint > proposed-profile.json
+cat proposed-profile.json
+```
+
+The proposed profile looks like this when both projects resolve:
+
+```json
+{
+  "watch": ["encode/httpx", "astral-sh/ruff"],
+  "watch_mode": "releases"
+}
+```
+
+The command prints package-to-repo matches and unresolved dependencies to the terminal. Ordinary package names are looked up on PyPI using their published project links, and direct HTTPS GitHub references are read from the dependency declaration. Review the proposed repos and edit the JSON to correct any mapping or add a missing `owner/name`. The importer reads static `[project]` dependencies and explicitly selected extras, including dependencies with environment markers. It imports declared dependencies without evaluating markers, resolving a lockfile, or installing packages. [Python project metadata specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/#dependencies-optional-dependencies)
+
+After reviewing a new profile, save it and run the digest:
+
+```sh
+mv proposed-profile.json profile.json
+python3 repo_radar.py --profile profile.json
+```
+
+The first digest shows the latest release for each watched project, with excerpts from its notes. The example above returned [HTTPX 0.28.1](https://github.com/encode/httpx/releases/tag/0.28.1) and [Ruff 0.17.6](https://github.com/astral-sh/ruff/releases/tag/0.17.6). Later runs report newly observed releases.
+
+To merge into an existing profile, pass `--profile profile.json` to `import-deps` and write the preview to a **different** file. The preview preserves your current topics, watchlist, and settings. Replace your profile only after reviewing it.
+
+Set `"watch_mode": "releases"` on any profile to follow GitHub releases and their notes without checking commits. A newly imported profile uses this setting. Existing profiles with no `watch_mode` use `"all"`, which tracks both releases and commits. You can use the setting in the daily GitHub Actions profile as well.
+
 ## Get a daily digest on GitHub
 
 The [Daily digest workflow](.github/workflows/daily-digest.yml) runs at **9:17 a.m. Eastern**. Open the [latest digest](https://github.com/OmElMon/Repo-Radar/blob/digests/README.md), browse earlier reports by UTC date in the [archive](https://github.com/OmElMon/Repo-Radar/tree/digests/archive), or read a run’s summary from the [Actions tab](https://github.com/OmElMon/Repo-Radar/actions/workflows/daily-digest.yml).

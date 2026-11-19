@@ -51,8 +51,7 @@ class GitHub:
             raise GitHubError(f"GitHub request failed: {error}") from error
 
 
-def load_profile(path):
-    profile = json.loads(path.read_text(encoding="utf-8"))
+def profile_settings(profile, *, allow_empty=False):
     if not isinstance(profile, dict):
         raise ValueError("The profile must be a JSON object.")
     topics = profile.get("topics", [])
@@ -68,9 +67,12 @@ def load_profile(path):
     ):
         raise ValueError("watch must be a list of GitHub repos in owner/name form.")
     watch = list({repo.lower(): repo for repo in watch}.values())
-    if not topics and not watch:
+    mode = profile.get("watch_mode", "all")
+    if mode not in ("all", "releases"):
+        raise ValueError('watch_mode must be "all" or "releases".')
+    if not allow_empty and not topics and not watch:
         raise ValueError("Add at least one topic or watched repo.")
-    return topics, watch
+    return topics, watch, mode
 
 
 def markdown(value):
@@ -231,7 +233,7 @@ def commit_line(commit, url):
     return f"- [`{sha[:7]}`]({url}/commit/{sha}) {markdown(title[:180])}"
 
 
-def watch_repo(api, configured_name, previous):
+def watch_repo(api, configured_name, previous, *, releases_only=False):
     path = "/repos/" + quote(configured_name, safe="/")
     repo = api.get(path)
     if repo.get("private") or repo.get("visibility") in {"private", "internal"}:
@@ -241,15 +243,6 @@ def watch_repo(api, configured_name, previous):
     path = "/repos/" + quote(name, safe="/")
     if previous.get("id") != repo["id"]:
         previous = {}
-    branch = repo["default_branch"]
-    try:
-        commits = api.get(path + "/commits", sha=branch, per_page=1)
-    except GitHubError as error:
-        if error.status != 409:
-            raise
-        commits = []  # GitHub returns HTTP 409 when the repository is empty.
-    head = commits[0]["sha"] if commits else None
-    old_head = previous.get("head")
     releases = api.get(path + "/releases", per_page=100)
     releases = [r for r in releases if not r["draft"] and r.get("published_at")]
     releases.sort(key=lambda r: r["published_at"], reverse=True)
@@ -259,6 +252,32 @@ def watch_repo(api, configured_name, previous):
     for release in new_releases:
         lines.extend(release_lines(release, url))
 
+    snapshot = {
+        "id": repo["id"],
+        "releases": sorted(seen | {release["id"] for release in releases}),
+    }
+    if releases_only:
+        if not new_releases:
+            lines.append("- No published releases yet." if not previous else "- No new releases.")
+    else:
+        commit_lines, head = watch_commits(api, path, url, repo["default_branch"], previous)
+        lines.extend(commit_lines)
+        snapshot.update(branch=repo["default_branch"], head=head)
+        if len(lines) == 2:
+            lines.append("- No new releases or default-branch commits.")
+    return lines, snapshot
+
+
+def watch_commits(api, path, url, branch, previous):
+    lines = []
+    try:
+        commits = api.get(path + "/commits", sha=branch, per_page=1)
+    except GitHubError as error:
+        if error.status != 409:
+            raise
+        commits = []  # GitHub returns HTTP 409 when the repository is empty.
+    head = commits[0]["sha"] if commits else None
+    old_head = previous.get("head")
     if not previous:
         lines.append(f"- Started tracking **{markdown(branch)}**.")
         if commits:
@@ -302,18 +321,11 @@ def watch_repo(api, configured_name, previous):
                 lines.append(commit_line(commits[0], url))
             else:
                 lines.append("- The default branch has no commits.")
-    if len(lines) == 2:
-        lines.append("- No new releases or default-branch commits.")
-    snapshot = {
-        "id": repo["id"],
-        "branch": branch,
-        "head": head,
-        "releases": sorted(seen | {release["id"] for release in releases}),
-    }
-    return lines, snapshot
+    return lines, head
 
 
-def run(api, topics, watch, state, today, limit):
+def run(api, topics, watch, state, today, limit, *, watch_mode="all"):
+    releases_only = watch_mode == "releases"
     warnings = []
     lines = [f"# Repo Radar · {today}", ""]
     if topics:
@@ -324,12 +336,13 @@ def run(api, topics, watch, state, today, limit):
         lines.extend(discovery or ["No matching repositories found."])
         lines.append("")
     if watch:
-        lines.extend(["## Watchlist", ""])
+        heading = "## Watchlist (releases only)" if releases_only else "## Watchlist"
+        lines.extend([heading, ""])
     watched = state.setdefault("watch", {})
     for name in watch:
         key = name.lower()
         try:
-            updates, snapshot = watch_repo(api, name, watched.get(key, {}))
+            updates, snapshot = watch_repo(api, name, watched.get(key, {}), releases_only=releases_only)
         except GitHubError as error:
             warnings.append(f"{name}: {error}")
             lines.extend([f"### {markdown(name)}", "", "- Check failed.", ""])
@@ -352,15 +365,59 @@ def run(api, topics, watch, state, today, limit):
         "Stars and forks measure community activity. Evaluate the README, license, and issues "
         "when deciding whether a project fits your work.",
         "",
-        "Watchlist checks inspect up to 100 releases. Commit lists show up to five entries "
-        "in chronological order from the comparison. GitHub returns at most 300 changed files. "
-        "Follow the comparison link for further detail.",
     ])
+    if watch:
+        lines.extend(["", "Watchlist checks inspect up to 100 releases."])
+        if not releases_only:
+            lines[-1] += (
+                " Commit lists show up to five entries in chronological order from the comparison. "
+                "GitHub returns at most 300 changed files. Follow the comparison link for further detail."
+            )
     return "\n".join(lines).rstrip() + "\n", warnings
 
 
+def preview_dependencies(argv):
+    from dependency_import import import_watchlist
+
+    parser = argparse.ArgumentParser(
+        prog="repo_radar.py import-deps",
+        description="Print a proposed profile for review. The current profile is read-only.",
+    )
+    parser.add_argument("pyproject", type=Path, help="Path to pyproject.toml")
+    parser.add_argument("--profile", type=Path, help="Existing profile to merge into the preview")
+    parser.add_argument("--extra", action="append", default=[], help="Include a named project extra (repeatable)")
+    args = parser.parse_args(argv)
+    try:
+        profile = json.loads(args.profile.read_text(encoding="utf-8")) if args.profile else {}
+        _, existing, _ = profile_settings(profile, allow_empty=True)
+        repos, resolved, skipped = import_watchlist(args.pyproject, args.extra)
+        for package, repo in resolved:
+            print(f"{package} → {repo}", file=sys.stderr)
+        for package, reason in skipped:
+            print(f"Unresolved {package}: {reason}", file=sys.stderr)
+        if not repos:
+            raise ValueError("No GitHub repositories were resolved.")
+        merged = {name.lower(): name for name in existing}
+        for name in repos:
+            merged.setdefault(name.lower(), name)
+        profile["watch"] = list(merged.values())
+        if not args.profile:
+            profile["watch_mode"] = "releases"
+        profile_settings(profile)
+        print(json.dumps(profile, indent=2))
+        return 0
+    except (OSError, ValueError) as error:
+        print(f"repo-radar: {error}", file=sys.stderr)
+        return 1
+
+
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
+    argv = sys.argv[1:] if argv is None else argv
+    if argv[:1] == ["import-deps"]:
+        return preview_dependencies(argv[1:])
+    parser = argparse.ArgumentParser(
+        description=__doc__, epilog="Preview a dependency watchlist with import-deps --help.",
+    )
     parser.add_argument("--profile", type=Path, required=True, help="Path to a JSON profile")
     parser.add_argument("--state", type=Path, help="SQLite state file (default: PROFILE.state.sqlite3)")
     parser.add_argument("--limit", type=int, default=8, help="Maximum discovery results")
@@ -371,14 +428,14 @@ def main(argv=None):
     if state_path.resolve() == args.profile.resolve():
         parser.error("--state must differ from --profile")
     try:
-        topics, watch = load_profile(args.profile)
+        topics, watch, mode = profile_settings(json.loads(args.profile.read_text(encoding="utf-8")))
         today = datetime.now(timezone.utc).date()
         with sqlite3.connect(state_path, timeout=5) as database:
             database.execute("BEGIN IMMEDIATE")
             database.execute("CREATE TABLE IF NOT EXISTS state (id INTEGER PRIMARY KEY, payload TEXT)")
             row = database.execute("SELECT payload FROM state WHERE id = 1").fetchone()
             state = json.loads(row[0]) if row else {}
-            report, warnings = run(GitHub(), topics, watch, state, today, args.limit)
+            report, warnings = run(GitHub(), topics, watch, state, today, args.limit, watch_mode=mode)
             sys.stdout.write(report)
             sys.stdout.flush()
             database.execute("INSERT OR REPLACE INTO state VALUES (1, ?)", (json.dumps(state),))
