@@ -1,6 +1,6 @@
 [Digest archive](archive/) · [Project README](https://github.com/OmElMon/Repo-Radar)
 
-# Repo Radar · 2026-11-19
+# Repo Radar · 2026-11-20
 
 ## Discover
 
@@ -8,114 +8,110 @@
 
 Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.
 
-- **Why it surfaced** — matches python, created within 30 days, +1,841 stars since 2026-11-18.
-- **Community** — 5,067 stars · 409 forks.
+- **Why it surfaced** — matches python, created within 30 days, +1,484 stars since 2026-11-19.
+- **Community** — 6,551 stars · 514 forks.
 - **Language and license** — Rust · MIT.
-- **Activity** — created 2026-11-16 · last push 2026-11-19.
+- **Activity** — created 2026-11-16 · last push 2026-11-20.
 - **Explore** — [README](https://github.com/erkamyaman/rust-anything#readme) · [Releases](https://github.com/erkamyaman/rust-anything/releases) · [Contribution opportunities](https://github.com/erkamyaman/rust-anything/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [morluto/rea](https://github.com/morluto/rea)
 
 Reverse engineer anything with agents, from app behavior down to native binaries.
 
-- **Why it surfaced** — matches python, +1,734 stars since 2026-11-18.
-- **Community** — 469,900 stars · 114,790 forks.
+- **Why it surfaced** — matches python, +1,494 stars since 2026-11-19.
+- **Community** — 471,394 stars · 115,097 forks.
 - **Language and license** — TypeScript · MIT.
-- **Activity** — created 2026-04-14 · last push 2026-11-19.
+- **Activity** — created 2026-04-14 · last push 2026-11-20.
 - **Explore** — [README](https://github.com/morluto/rea#readme) · [Releases](https://github.com/morluto/rea/releases) · [Contribution opportunities](https://github.com/morluto/rea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
-
-### [l0ng-ai/openidea](https://github.com/l0ng-ai/openidea)
-
-The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.
-
-- **Why it surfaced** — matches developer-tools, created within 30 days, +121 stars since 2026-11-18.
-- **Community** — 9,503 stars · 891 forks.
-- **Language and license** — TypeScript · Apache-2.0.
-- **Activity** — created 2026-10-21 · last push 2026-11-19.
-- **Explore** — [README](https://github.com/l0ng-ai/openidea#readme) · [Releases](https://github.com/l0ng-ai/openidea/releases) · [Contribution opportunities](https://github.com/l0ng-ai/openidea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
-
-### [affaan-m/ECC](https://github.com/affaan-m/ECC)
-
-The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
-
-- **Why it surfaced** — matches developer-tools, +805 stars since 2026-11-18.
-- **Community** — 307,239 stars · 45,222 forks.
-- **Language and license** — JavaScript · MIT.
-- **Activity** — created 2026-01-18 · last push 2026-11-19.
-- **Explore** — [README](https://github.com/affaan-m/ECC#readme) · [Releases](https://github.com/affaan-m/ECC/releases) · [Contribution opportunities](https://github.com/affaan-m/ECC/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [haydenschmitty/floorplan](https://github.com/haydenschmitty/floorplan)
 
 See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.
 
-- **Why it surfaced** — matches developer-tools, created within 30 days, +167 stars since 2026-11-18.
-- **Community** — 4,990 stars · 414 forks.
+- **Why it surfaced** — matches developer-tools, created within 30 days, +621 stars since 2026-11-19.
+- **Community** — 5,611 stars · 484 forks.
 - **Language and license** — JavaScript · MIT.
 - **Activity** — created 2026-10-27 · last push 2026-11-16.
 - **Explore** — [README](https://github.com/haydenschmitty/floorplan#readme) · [Releases](https://github.com/haydenschmitty/floorplan/releases) · [Contribution opportunities](https://github.com/haydenschmitty/floorplan/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+
+### [affaan-m/ECC](https://github.com/affaan-m/ECC)
+
+The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
+
+- **Why it surfaced** — matches developer-tools, +559 stars since 2026-11-19.
+- **Community** — 307,798 stars · 45,313 forks.
+- **Language and license** — JavaScript · MIT.
+- **Activity** — created 2026-01-18 · last push 2026-11-20.
+- **Explore** — [README](https://github.com/affaan-m/ECC#readme) · [Releases](https://github.com/affaan-m/ECC/releases) · [Contribution opportunities](https://github.com/affaan-m/ECC/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+
+### [l0ng-ai/openidea](https://github.com/l0ng-ai/openidea)
+
+The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.
+
+- **Why it surfaced** — matches developer-tools, created within 30 days, +201 stars since 2026-11-19.
+- **Community** — 9,704 stars · 918 forks.
+- **Language and license** — TypeScript · Apache-2.0.
+- **Activity** — created 2026-10-21 · last push 2026-11-20.
+- **Explore** — [README](https://github.com/l0ng-ai/openidea#readme) · [Releases](https://github.com/l0ng-ai/openidea/releases) · [Contribution opportunities](https://github.com/l0ng-ai/openidea/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ### [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)
 
 Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.
 
-- **Why it surfaced** — matches developer-tools, +465 stars since 2026-11-18.
-- **Community** — 150,601 stars · 14,485 forks.
+- **Why it surfaced** — matches developer-tools, +540 stars since 2026-11-19.
+- **Community** — 151,141 stars · 14,546 forks.
 - **Language and license** — Python · Apache-2.0.
-- **Activity** — created 2026-04-03 · last push 2026-11-19.
+- **Activity** — created 2026-04-03 · last push 2026-11-20.
 - **Explore** — [README](https://github.com/Graphify-Labs/graphify#readme) · [Releases](https://github.com/Graphify-Labs/graphify/releases) · [Contribution opportunities](https://github.com/Graphify-Labs/graphify/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
-### [cutetailbud/ff-ruyijs](https://github.com/cutetailbud/ff-ruyijs)
+### [Sandflow-ai/sand3d](https://github.com/Sandflow-ai/sand3d)
 
-This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through various web protection systems, login processes, and reverse-engineering scenarios
+3D modeling in Python, built for LLMs.
 
-- **Why it surfaced** — matches python, created within 30 days, +26 stars since 2026-11-18.
-- **Community** — 1,553 stars · 363 forks.
-- **Language and license** — C++ · AGPL-3.0.
-- **Activity** — created 2026-10-28 · last push 2026-11-19.
-- **Explore** — [README](https://github.com/cutetailbud/ff-ruyijs#readme) · [Releases](https://github.com/cutetailbud/ff-ruyijs/releases) · [Contribution opportunities](https://github.com/cutetailbud/ff-ruyijs/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Why it surfaced** — matches python, created within 30 days, +36 stars since 2026-11-19.
+- **Community** — 2,202 stars · 241 forks.
+- **Language and license** — HTML · Apache-2.0.
+- **Activity** — created 2026-11-03 · last push 2026-11-20.
+- **Explore** — [README](https://github.com/Sandflow-ai/sand3d#readme) · [Releases](https://github.com/Sandflow-ai/sand3d/releases) · [Contribution opportunities](https://github.com/Sandflow-ai/sand3d/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
-### [vinta/awesome-python](https://github.com/vinta/awesome-python)
+### [sherlock-project/sherlock](https://github.com/sherlock-project/sherlock)
 
-The definitive list that answers "I want to do X in Python, which tool should I use?"
+Hunt down social media accounts by username across social networks
 
-- **Why it surfaced** — matches python, +203 stars since 2026-11-18.
-- **Community** — 335,892 stars · 29,133 forks.
-- **Language and license** — Python · Review the repository license.
-- **Activity** — created 2014-06-27 · last push 2026-11-17.
-- **Explore** — [README](https://github.com/vinta/awesome-python#readme) · [Releases](https://github.com/vinta/awesome-python/releases) · [Contribution opportunities](https://github.com/vinta/awesome-python/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Why it surfaced** — matches python, +425 stars since 2026-11-19.
+- **Community** — 114,999 stars · 13,189 forks.
+- **Language and license** — Python · MIT.
+- **Activity** — created 2018-12-24 · last push 2026-11-20.
+- **Explore** — [README](https://github.com/sherlock-project/sherlock#readme) · [Releases](https://github.com/sherlock-project/sherlock/releases) · [Contribution opportunities](https://github.com/sherlock-project/sherlock/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
 
 
 ## Watchlist
 
 ### [astral-sh/ruff](https://github.com/astral-sh/ruff)
 
-- Release [0.17.6](https://github.com/astral-sh/ruff/releases/tag/0.17.6) · 2026-11-19
-  - **Release Notes** — Released on 2026-11-19.
-  - **Preview features** — \[flake8-type-checking\] Add a fix for runtime-string-union (TC010) (\#15635)
-  - **Bug fixes** — Fix handling of parenthesized duplicate items (B033, RUF068) (\#30493)
-  - **Bug fixes** — \[pyflakes\] Fix false negative when a name is assigned more than once (F823) (\#30524)
-  - **Bug fixes** — \[pylint\] Avoid false positive when collection is modified in loop (PLR1733, PLR1736) (\#30466)
-- [26 new commits](https://github.com/astral-sh/ruff/compare/248231e9936ecc0e44ecd3a69bc07899736e4e23...0180bc7ff68056bb06cbac660c98068c5ab8a59f) on **main**.
-- [`3e94fa7`](https://github.com/astral-sh/ruff/commit/3e94fa78fd97df17e5f335fc3c1f97a3d1771861) \[ty\] Preserve argument inference for unannotated overload parameters (\#30549)
-- [`e69185f`](https://github.com/astral-sh/ruff/commit/e69185f497ed4078d99b63bcf30699e3ef127640) \[ty\] Keep logs above progress bars (\#30527)
-- [`46c8e45`](https://github.com/astral-sh/ruff/commit/46c8e45ab5669ddd5413bd87d97ad7d2a4187a68) \[ty\] Clarify gradual callable assignability tests (\#30543)
-- [`981d44c`](https://github.com/astral-sh/ruff/commit/981d44c9cb10a8842ef87de1059c0ba44be8dbff) \[ty\] Rename \`uv-metadata\` diagnostic to \`project-manager\` and improve its wording (\#30528)
-- [`700c1e8`](https://github.com/astral-sh/ruff/commit/700c1e84243c5f270951f47c6e8cfb41baeeca2f) \[ty\] Move \`NamedTupleLike\` to \`ty\_extensions.\_internal\` (\#30567)
-- File changes returned by GitHub — 8 added, 193 modified, 99 renamed.
-- Added files: crates/ruff\_linter/resources/test/fixtures/isort/required\_imports/relative\_future\_import.py, crates/ruff\_linter/src/rules/isort/snapshots/ruff\_linter\_\_rules\_\_isort\_\_tests\_\_required\_import\_relative\_future\_import.py.snap, crates/ruff\_linter/src/rules/isort/snapshots/ruff\_linter\_\_rules\_\_isort\_\_tests\_\_required\_relative\_future\_import\_in\_stub\_3.12.snap, crates/ruff\_linter/src/rules/isort/snapshots/ruff\_linter\_\_rules\_\_isort\_\_tests\_\_required\_relative\_future\_import\_in\_stub\_3.13.snap, crates/ruff\_python\_parser/resources/inline/err/relative\_future\_feature\_py312.py, plus 3 more shown by GitHub.
+- [28 new commits](https://github.com/astral-sh/ruff/compare/0180bc7ff68056bb06cbac660c98068c5ab8a59f...f31dd86f222f7d978a65cfc453eaf88f11456ed7) on **main**.
+- [`d936a55`](https://github.com/astral-sh/ruff/commit/d936a5566ecbe2c35f762f8d20f54a25c7e082eb) Rename 17 rules for source layout, imports, and directives (\#30477)
+- [`6b5b5ec`](https://github.com/astral-sh/ruff/commit/6b5b5eca948c05261a3909e78133884cd9e61c9e) Fix a typo in an error message (\#30604)
+- [`c8ba04d`](https://github.com/astral-sh/ruff/commit/c8ba04dc06caf4370d494870145c4f92356f1222) \[ty\] Memoize more argument assignability checks (\#30483)
+- [`cbcf866`](https://github.com/astral-sh/ruff/commit/cbcf8663796a051518ecbefc560987523fe8b2d6) \[ty\] Preserve type variable constraints through identity aliases (\#30590)
+- [`3f44d52`](https://github.com/astral-sh/ruff/commit/3f44d52da5b58ea698ec5e80b44b7716d6080ca7) Fix bogus token range in forward tokenizer (\#30611)
+- File changes returned by GitHub — 10 added, 138 modified, 14 removed, 54 renamed.
+- Added files: crates/ruff\_linter/resources/mdtest/pylint/unescaped-backspace-character.md, crates/ty\_python\_semantic/resources/lint\_docs/mismatched-enum-name.md, crates/ty\_python\_semantic/resources/lint\_docs/mismatched-namedtuple-name.md, crates/ty\_python\_semantic/resources/lint\_docs/mismatched-newtype-name.md, crates/ty\_python\_semantic/resources/lint\_docs/mismatched-paramspec-name.md, plus 5 more shown by GitHub.
 
 ### [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 
-- [3 new commits](https://github.com/BurntSushi/ripgrep/compare/4933645d81498e53ea150f96bde5860f6dcb2e5f...6670aede458f62440fc8a9aab753230902860e0e) on **master**.
-- [`a95835b`](https://github.com/BurntSushi/ripgrep/commit/a95835b2760dc7e17d4e375b2a30cd707c24e849) fix: reject partial path components when stripping Unix prefixes (\#3609)
-- [`fdf7d95`](https://github.com/BurntSushi/ripgrep/commit/fdf7d95485ec69c599418b7e7154baa4518fed2c) fix: continue reading ignore files after invalid UTF-8 lines (\#3605)
-- [`6670aed`](https://github.com/BurntSushi/ripgrep/commit/6670aede458f62440fc8a9aab753230902860e0e) fix: statically link binary on Windows ARM64/MSVC (\#3607) (\#3614)
-- File changes returned by GitHub — 3 modified.
+- [12 new commits](https://github.com/BurntSushi/ripgrep/compare/6670aede458f62440fc8a9aab753230902860e0e...9ca85a37539f0f7d3246f2baf62fcd583aecb940) on **master**.
+- [`65da28e`](https://github.com/BurntSushi/ripgrep/commit/65da28ed8056bed0fafb71f40be364bee26cf29d) globset: fix matches\_all across required extensions (\#3613)
+- [`16f9b2e`](https://github.com/BurntSushi/ripgrep/commit/16f9b2e64a42c43a469f72260226a6c65a4c88b9) chore: remove duplicated word in glob parser comment (\#3600)
+- [`991405e`](https://github.com/BurntSushi/ripgrep/commit/991405e86e94c2b1e00e98cc6315728694d59eda) fix: \`-v -m N -A k\` printing the rest of the input as matches (\#3593)
+- [`4e63e9c`](https://github.com/BurntSushi/ripgrep/commit/4e63e9cf60b00ab3712cfd24d368a0808fedae9a) docs: clarify PATH environment variable in flag documentation (\#3598)
+- [`7c7ffc0`](https://github.com/BurntSushi/ripgrep/commit/7c7ffc02b0a598b4038380e676fd2233d384add2) ignore: keep the builder root in an empty matcher (\#3585)
+- File changes returned by GitHub — 11 modified.
 
 
 ## About this check
 
-Checked on 2026-11-19 in UTC with 2 discovery topics and 2 watched repositories.
+Checked on 2026-11-20 in UTC with 2 discovery topics and 2 watched repositories.
 
 Discovery samples up to 30 results per query from repositories pushed within 14 days. Emerging projects were created within 30 days and have at least 5 stars. The established-project search starts at 25 stars. Ranking uses topic matches, stars, forks, recent creation, and observed star growth, then alternates between both groups.
 
